@@ -8,14 +8,14 @@
    ============================================ */
 @font-face {
     font-family: 'Arkhip';
-    src: url('/fonts/arkhip_font.ttf') format('truetype');
+    src: url('fonts/arkhip_font.ttf') format('truetype');
     font-weight: bold;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Salaryma';
-    src: url('/fonts/SALARYMA.ttf') format('truetype');
+    src: url('fonts/SALARYMA.ttf') format('truetype');
     font-weight: normal;
     font-display: swap;
 }
