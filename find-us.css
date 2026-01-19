@@ -6,9 +6,10 @@
 .hero-find-us {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    padding-left: 100px;
     align-items: center;
     background-image: url('./imgs/bg/dubai-hero.jpg');
     background-size: cover;
