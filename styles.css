@@ -145,7 +145,7 @@ p, a, li, input, textarea, button {
 }
 
 .navbar.scrolled {
-    background: rgba(2, 0, 17, 0.8);
+    background: rgba(5, 1, 34, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 20px 40px;
@@ -272,7 +272,7 @@ p, a, li, input, textarea, button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.527);
+    background: rgba(0, 0, 0, 0.568);
     z-index: 1;
 }
 
