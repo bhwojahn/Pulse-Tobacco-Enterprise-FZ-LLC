@@ -645,6 +645,44 @@ footer {
 }
 
 /* ============================================
+   MINI FOOTER
+   ============================================ */
+.mini-footer {
+    background: var(--navy);
+    padding: 20px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(194, 186, 121, 0.2);
+}
+
+.mini-footer-text {
+    font-size: 0.85rem;
+    color: rgba(221, 224, 173, 0.6);
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.mini-footer-link {
+    color: rgba(221, 224, 173, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mini-footer-link:hover {
+    color: var(--gold);
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .mini-footer {
+        padding: 15px 20px;
+    }
+    
+    .mini-footer-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================
    RESPONSIVE DESIGN - TABLET (768px - 1024px)
    ============================================ */
 @media screen and (max-width: 1024px) {
