@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/imgs/bg/find-us-hero.jpg');
+    background-image: url('imgs/bg/find-us-hero.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
