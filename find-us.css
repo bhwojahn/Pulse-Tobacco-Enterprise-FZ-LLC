@@ -176,12 +176,44 @@
 }
 
 /* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media screen and (max-width: 1024px) {
+    .hero-find-us {
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .events-section {
+        padding: 60px 30px;
+        gap: 50px;
+    }
+
+    .event-card {
+        padding: 40px;
+    }
+
+    .event-content {
+        grid-template-columns: 1fr 150px;
+        gap: 40px;
+    }
+
+    .event-logo img {
+        max-width: 140px;
+    }
+}
+
+/* ============================================
    RESPONSIVE - MOBILE
    ============================================ */
 @media screen and (max-width: 768px) {
     .hero-find-us {
         height: 60vh;
         min-height: 400px;
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
     }
 
     .events-section {
