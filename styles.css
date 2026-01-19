@@ -180,6 +180,16 @@ p, a, li, input, textarea, button {
     width: 100%;
 }
 
+/* Prevent underline on logo link */
+.navlinks:has(.logo)::after {
+    display: none;
+}
+
+/* Alternative method - add a specific class to the logo link in HTML */
+.navlinks.logo-link::after {
+    display: none;
+}
+
 .logo {
     width: 50px;
     height: auto;
