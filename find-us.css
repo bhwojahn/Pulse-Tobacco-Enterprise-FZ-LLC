@@ -1,0 +1,226 @@
+/* ============================================
+   FIND US PAGE - SPECIFIC STYLES
+   ============================================ */
+
+/* Hero section with city skyline background */
+.hero-find-us {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/imgs/bg/find-us-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-find-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 0, 17, 0.7);
+    z-index: 1;
+}
+
+/* Events Section */
+.events-section {
+    padding: 80px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* Event Card */
+.event-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(194, 186, 121, 0.2);
+    border-radius: 12px;
+    padding: 50px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.event-card:hover {
+    border-color: rgba(194, 186, 121, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Event Content Layout */
+.event-content {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Event Text */
+.event-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.event-name {
+    font-family: 'Arkhip', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin: 0;
+}
+
+.event-location {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--white);
+    font-weight: 500;
+}
+
+.event-dates {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.event-description {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.8;
+    color: rgba(221, 224, 173, 0.9);
+    margin-top: 10px;
+}
+
+/* Event Button */
+.event-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 40px;
+    background: rgba(2, 0, 17, 0.8);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.event-button:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(194, 186, 121, 0.4);
+}
+
+/* Event Logo */
+.event-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-logo img {
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover .event-logo img {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media screen and (max-width: 1024px) {
+    .events-section {
+        padding: 60px 30px;
+        gap: 50px;
+    }
+
+    .event-card {
+        padding: 40px;
+    }
+
+    .event-content {
+        grid-template-columns: 1fr 150px;
+        gap: 40px;
+    }
+
+    .event-logo img {
+        max-width: 140px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media screen and (max-width: 768px) {
+    .hero-find-us {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .events-section {
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .event-card {
+        padding: 30px 25px;
+    }
+
+    .event-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Logo moves to top */
+    .event-content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .event-logo {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .event-logo img {
+        max-width: 120px;
+    }
+
+    .event-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - SMALL MOBILE
+   ============================================ */
+@media screen and (max-width: 480px) {
+    .event-card {
+        padding: 25px 20px;
+    }
+
+    .event-name {
+        font-size: 1.8rem;
+    }
+
+    .event-logo img {
+        max-width: 100px;
+    }
+}
