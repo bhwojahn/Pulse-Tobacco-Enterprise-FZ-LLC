@@ -24,7 +24,7 @@
    CSS VARIABLES
    ============================================ */
 :root {
-    --navy: #020011;
+    --navy: #05021d;
     --gold: #C2BA79;
     --white: #dde0ad;
     --gold-light: #F5EC9B;
@@ -272,7 +272,7 @@ p, a, li, input, textarea, button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.63);
+    background: rgba(0, 0, 0, 0.527);
     z-index: 1;
 }
 
@@ -282,8 +282,8 @@ p, a, li, input, textarea, button {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 70%;
-    background: linear-gradient(to top, rgba(2, 0, 17, 1) 0%, transparent 100%);
+    height: 50%;
+    background: linear-gradient(to top, #05021d 0%, transparent 100%);
     z-index: 2;
 }
 
@@ -298,7 +298,7 @@ p, a, li, input, textarea, button {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3rem, 5vw, 8rem);
     letter-spacing: 0.15em;
     color: var(--white);
     margin: 0;
