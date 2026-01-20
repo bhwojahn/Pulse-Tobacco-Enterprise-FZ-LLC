@@ -84,12 +84,12 @@ p, a, li, input, textarea, button {
    ============================================ */
 .hero-gold-divider,
 .about-gold-divider,
-.products-gold-divider,
 .contact-gold-divider,
+.products-gold-divider,
 #hero-gold-divider,
 #about-gold-divider,
-#products-gold-divider,
-#contact-gold-divider {
+#contact-gold-divider,
+#products-gold-divider {
     height: 4px;
     width: 100%;
     max-width: 200px;
@@ -458,37 +458,214 @@ p, a, li, input, textarea, button {
 }
 
 /* ============================================
-   PRODUCTS SECTION
+   PRODUCTS SECTION - TIMELINE DESIGN
    ============================================ */
 .products {
-    padding: var(--section-padding) 40px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Products Title Section */
+.products-title-container {
+    /* padding: var(--section-padding) 40px 40px; */
     max-width: var(--container-max-width);
     margin: 0 auto;
     text-align: center;
-}
-
-.products-title-container {
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 100px;
 }
 
 .products-title {
     font-size: clamp(2rem, 4vw, 3rem);
     letter-spacing: 0.1em;
-    margin-bottom: 10px;
 }
 
-.products-text-container {
-    max-width: 900px;
-    margin: 0 auto;
+/* Timeline Navigation - DESKTOP ONLY */
+.timeline-nav {
+    display: none;
 }
 
-.products-text {
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    line-height: 1.8;
+@media screen and (min-width: 769px) {
+    .timeline-nav {
+        display: flex;
+        position: sticky;
+        left: 0;
+        top: 100px;
+        z-index: 100;
+        background: rgba(5, 2, 29, 0.95);
+        backdrop-filter: blur(10px);
+        border-right: 2px solid rgba(194, 186, 121, 0.3);
+        width: 250px;
+        height: calc(100vh - 100px);
+        max-height: calc(100vh - 100px);
+        flex-direction: column;
+        transition: top 0.3s ease, height 0.3s ease;
+    }
+    
+    .navbar.scrolled ~ * .timeline-nav,
+    body.scrolled .timeline-nav {
+        top: 80px;
+        height: calc(100vh - 80px);
+        max-height: calc(100vh - 80px);
+    }
+}
+
+/* Timeline Items Container */
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Individual Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgba(221, 224, 173, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0%;
+    background: var(--gold);
+    transition: height 0.3s ease;
+}
+
+.timeline-item:hover::before,
+.timeline-item.active::before {
+    height: 100%;
+}
+
+.timeline-item:hover {
     color: var(--white);
+}
+
+.timeline-item.active {
+    color: var(--gold);
+}
+
+/* Timeline Icon */
+.timeline-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(87%) sepia(12%) saturate(647%) hue-rotate(12deg) brightness(95%) contrast(88%);
+}
+
+.timeline-item:hover .timeline-icon,
+.timeline-item.active .timeline-icon {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(78%) sepia(27%) saturate(427%) hue-rotate(12deg) brightness(95%) contrast(88%);
+}
+
+/* Timeline Label */
+.timeline-label {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+/* Products Content Area */
+.products-content {
+    margin-top: -550px;
+    margin-left: 0;
+}
+
+@media screen and (min-width: 769px) {
+    .products-content {
+        margin-left: 250px;
+    }
+}
+
+/* Individual Product Section */
+.product-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    /* scroll-margin-top: 100px; */
+    border-bottom: 1px solid transparent;
+    border-image: radial-gradient(ellipse at center, var(--gold-light) 0%, transparent 100%) 1;
+}
+
+.product-section:last-child {
+    border-bottom: none;
+}
+
+/* Product Text */
+.product-text {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    background: var(--navy);
+}
+
+.product-name {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.product-gold-divider {
+    height: 2px;
+    width: 150px;
+    background: radial-gradient(ellipse at center, var(--gold-light) 0%, var(--gold-dark) 100%);
+    margin-bottom: 30px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+}
+
+.product-details h3 {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    letter-spacing: 0.08em;
+    color: var(--gold-light);
+    margin-bottom: 5px;
+}
+
+.product-details p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.7;
+    color: var(--white);
+}
+
+/* Product Image */
+.product-image {
+    width: 50%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* ============================================
@@ -689,17 +866,6 @@ footer {
     color: var(--gold);
 }
 
-/* Mobile responsive */
-@media screen and (max-width: 768px) {
-    .mini-footer {
-        padding: 15px 20px;
-    }
-    
-    .mini-footer-text {
-        font-size: 0.75rem;
-    }
-}
-
 /* ============================================
    RESPONSIVE DESIGN - TABLET (768px - 1024px)
    ============================================ */
@@ -718,6 +884,10 @@ footer {
     .image-sampling img,
     .image-logistics img {
         height: 400px;
+    }
+
+    .product-text {
+        padding: 50px 60px;
     }
 }
 
@@ -757,7 +927,6 @@ footer {
     .sourcing,
     .sampling,
     .logistics,
-    .products,
     .contact-us {
         padding: var(--section-padding-mobile) 20px;
     }
@@ -794,6 +963,43 @@ footer {
         height: 300px;
     }
 
+    /* Products - Mobile: No Timeline, Just Content */
+    .products-title-container {
+        padding: var(--section-padding-mobile) 20px 20px;
+    }
+
+    .products-content {
+        margin-left: 0;
+    }
+
+    .product-section {
+        flex-direction: column;
+        scroll-margin-top: 0;
+    }
+
+    .product-text {
+        width: 100%;
+        min-height: auto;
+        padding: 40px 30px;
+    }
+
+    .product-name {
+        font-size: 1.8rem;
+    }
+
+    .product-details h3 {
+        font-size: 1rem;
+    }
+
+    .product-details p {
+        font-size: 0.9rem;
+    }
+
+    .product-image {
+        width: 100%;
+        min-height: 50vh;
+    }
+
     /* Footer stays 3 columns but smaller */
     footer {
         gap: 40px;
@@ -801,9 +1007,16 @@ footer {
     }
 
     .location-title,
-    .links-title,
-    .contact-title {
+    .links-title {
         font-size: 1rem;
+    }
+    
+    .mini-footer {
+        padding: 15px 20px;
+    }
+    
+    .mini-footer-text {
+        font-size: 0.75rem;
     }
 }
 
@@ -828,6 +1041,22 @@ footer {
     .image-sampling img,
     .image-logistics img {
         height: 250px;
+    }
+
+    .product-text {
+        padding: 30px 20px;
+    }
+
+    .product-name {
+        font-size: 1.6rem;
+    }
+
+    .product-details h3 {
+        font-size: 0.95rem;
+    }
+
+    .product-details p {
+        font-size: 0.85rem;
     }
 
     /* Footer to single column on very small screens */

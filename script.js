@@ -1,6 +1,6 @@
 // ============================================
 // PULSE TOBACCO ENTERPRISE - SCRIPT.JS
-// Mobile Menu, Smooth Scrolling, Navbar Effects
+// Mobile Menu, Smooth Scrolling, Navbar Effects, Timeline Navigation
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -125,7 +125,107 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ============================================
+    // TIMELINE NAVIGATION (Products Section)
+    // ============================================
+    initializeTimelineNavigation();
+
 });
+
+// ============================================
+// TIMELINE NAVIGATION INITIALIZATION
+// ============================================
+function initializeTimelineNavigation() {
+    const timelineNav = document.getElementById('timeline-nav');
+    const timelineToggle = document.getElementById('timeline-toggle');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const productSections = document.querySelectorAll('.product-section');
+
+    // Only run if timeline elements exist (products page)
+    if (!timelineNav || !timelineItems.length) {
+        return;
+    }
+
+    // Toggle Timeline Expand/Collapse (Mobile ONLY)
+    if (timelineToggle) {
+        timelineToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Only allow toggle on mobile
+            if (window.innerWidth <= 768) {
+                timelineNav.classList.toggle('collapsed');
+            }
+        });
+    }
+
+    // Timeline Item Click Navigation
+    timelineItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove active class from all items
+            timelineItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get target section
+            const targetId = this.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // Smooth scroll to section
+                targetSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // Collapse timeline on mobile after selection
+            if (window.innerWidth <= 768) {
+                setTimeout(() => {
+                    timelineNav.classList.add('collapsed');
+                }, 300);
+            }
+        });
+    });
+
+    // Highlight active section on scroll (debounced)
+    const highlightActiveSection = debounce(function() {
+        let currentSection = null;
+        
+        productSections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            
+            // Check if section is in viewport (more than 40% visible)
+            if (rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.4) {
+                currentSection = section;
+            }
+        });
+        
+        if (currentSection) {
+            const sectionId = currentSection.getAttribute('id');
+            
+            // Update active timeline item
+            timelineItems.forEach(item => {
+                if (item.getAttribute('data-target') === sectionId) {
+                    if (!item.classList.contains('active')) {
+                        timelineItems.forEach(i => i.classList.remove('active'));
+                        item.classList.add('active');
+                    }
+                }
+            });
+        }
+    }, 100);
+
+    window.addEventListener('scroll', highlightActiveSection);
+
+    // Initialize - Set collapsed state ONLY on mobile, always expanded on desktop/tablet
+    if (window.innerWidth <= 768) {
+        timelineNav.classList.add('collapsed');
+    } else {
+        timelineNav.classList.remove('collapsed');
+    }
+}
 
 // ============================================
 // CREATE MOBILE MENU STRUCTURE
@@ -194,11 +294,21 @@ function debounce(func, wait) {
 // ============================================
 const handleResize = debounce(function() {
     const mobileMenu = document.querySelector('.mobile-menu');
+    const timelineNav = document.getElementById('timeline-nav');
     
     // Close mobile menu if window is resized to desktop size
     if (window.innerWidth > 768 && mobileMenu) {
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
+    }
+
+    // Reset timeline nav state on resize
+    if (timelineNav) {
+        if (window.innerWidth <= 768) {
+            timelineNav.classList.add('collapsed');
+        } else {
+            timelineNav.classList.remove('collapsed');
+        }
     }
 }, 250);
 
