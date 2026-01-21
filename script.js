@@ -1,6 +1,6 @@
 // ============================================
 // PULSE TOBACCO ENTERPRISE - SCRIPT.JS
-// Mobile Menu, Smooth Scrolling, Navbar Effects, Timeline Navigation
+// Mobile Menu, Smooth Scrolling, Navbar Effects, Timeline Navigation, Products Tabs
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -130,6 +130,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     initializeTimelineNavigation();
 
+    // ============================================
+    // PRODUCTS SECTION TABS
+    // ============================================
+    initializeProductsTabs();
+
 });
 
 // ============================================
@@ -225,6 +230,55 @@ function initializeTimelineNavigation() {
     } else {
         timelineNav.classList.remove('collapsed');
     }
+}
+
+// ============================================
+// PRODUCTS TABS INITIALIZATION
+// ============================================
+function initializeProductsTabs() {
+    let activeTab = null;
+    const productTabs = document.querySelectorAll('.product-tab');
+    const totalTabs = productTabs.length;
+
+    if (!productTabs.length) {
+        return;
+    }
+
+    function updateTabWidths() {
+        productTabs.forEach(tab => {
+            const productId = tab.getAttribute('data-product-id');
+            
+            if (activeTab === null) {
+                tab.style.width = `calc(100vw / ${totalTabs})`;
+            } else if (activeTab === productId) {
+                tab.style.width = '70vw';
+            } else {
+                tab.style.width = `calc(30vw / ${totalTabs - 1})`;
+            }
+        });
+    }
+
+    function handleTabClick(event) {
+        const tab = event.currentTarget;
+        const productId = tab.getAttribute('data-product-id');
+        
+        if (activeTab === productId) {
+            activeTab = null;
+            tab.classList.remove('active');
+        } else {
+            productTabs.forEach(t => t.classList.remove('active'));
+            activeTab = productId;
+            tab.classList.add('active');
+        }
+        
+        updateTabWidths();
+    }
+
+    productTabs.forEach(tab => {
+        tab.addEventListener('click', handleTabClick);
+    });
+
+    updateTabWidths();
 }
 
 // ============================================
