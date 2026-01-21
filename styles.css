@@ -351,6 +351,7 @@ p, a, li, input, textarea, button {
     font-size: clamp(2rem, 4vw, 3rem);
     letter-spacing: 0.1em;
     margin-bottom: 10px;
+    font-family: 'Arkhip', sans-serif;
 }
 
 .about-text-container {
@@ -447,6 +448,7 @@ p, a, li, input, textarea, button {
     font-size: clamp(2rem, 4vw, 3rem);
     letter-spacing: 0.1em;
     margin-bottom: 10px;
+    font-family: 'Arkhip', sans-serif;
 }
 
 .sourcing-text,
@@ -475,6 +477,7 @@ p, a, li, input, textarea, button {
     font-size: clamp(2rem, 4vw, 3rem);
     letter-spacing: 0.1em;
     margin-bottom: 10px;
+    font-family: 'Arkhip', sans-serif;
 }
 
 .contact-title-container .contact-gold-divider {
