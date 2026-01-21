@@ -274,12 +274,14 @@ p, a, li, input, textarea, button {
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease, border 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     border: 2px solid var(--gold);
+    opacity: 0.6;
 }
 
 .language-current:hover {
     transform: scale(1.1);
+    opacity: 1;
 }
 
 .language-flag-current {
