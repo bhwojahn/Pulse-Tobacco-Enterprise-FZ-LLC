@@ -268,7 +268,7 @@ p, a, li, input, textarea, button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('imgs/bg/test7.jpg');
+    background-image: url('imgs/bg/test3.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -843,6 +843,8 @@ a, button, input, textarea {
   flex: 1;
   width: 100vw;
   overflow: hidden;
+  gap: 0.8px;
+  background: var(--gold-dark);
 }
 
 .product-tab {
@@ -850,23 +852,23 @@ a, button, input, textarea {
   height: calc(100vh - 180px);
   cursor: pointer;
   overflow: hidden;
-  transition: width 400ms ease-in-out, outline 300ms ease-in-out;
-  width: calc(100vw / 5);
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+  transition: width 400ms ease-in-out, border 300ms ease-in-out;
+  width: calc((100vw - 3.2px) / 5);
+  border: 0.8px solid var(--gold-dark);
+  box-sizing: border-box;
 }
 
 .product-tab:hover {
-  outline: 2px solid var(--gold-dark);
+  border: 0.8px solid var(--gold-dark);
 }
 
 .product-tab.active {
   width: 70vw;
-  outline: 2px solid var(--gold);
+  border: 0.8px solid var(--gold);
 }
 
 .product-tab:not(.active) {
-  width: calc(30vw / 4);
+  width: calc((30vw - 3.2px) / 4);
 }
 
 .product-tab-bg {
@@ -1008,7 +1010,7 @@ a, button, input, textarea {
     width: 100% !important;
     height: 10vh;
     min-height: 80px;
-    transition: height 400ms ease-in-out, outline 300ms ease-in-out;
+    transition: height 400ms ease-in-out, border 300ms ease-in-out;
   }
 
   .product-tab.active {
