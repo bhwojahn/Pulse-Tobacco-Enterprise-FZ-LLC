@@ -16,8 +16,12 @@ const translations = {
         
         // About Section
         aboutTitle: "ABOUT US",
-        aboutText1: "Pulse Tobacco Enterprise FZ-LLC, founded in December 2024, is a trusted global supplier of tobacco, connected with the world's most discerning tobacco manufacturers.",
-        aboutText2: "Here at Pulse Tobacco we maintain a strict business process, guaranteeing the best tobacco products on the market.",
+        aboutHeadline: "Trusted Global Tobacco Partner",
+        aboutDescription1: "Pulse Tobacco, founded in the final stretch of 2024, by Jonas Wojahn, is a tobacco trading company looking to explore its potential in the global market. Pulse maintains a strict business process, guaranteeing the best tobacco products on the market. We combine traditional expertise with modern logistics to deliver on our promises, every time.",
+        checkMission: "Integrity & Transparency",
+        checkServe: "Global Manufacturer Partner",
+        checkQuality: "Unyielding Quality Standards",
+        checkTeam: "15+ Years Experience",
         
         // Sourcing Section
         sourcingTitle: "SOURCING",
@@ -109,8 +113,12 @@ const translations = {
         
         // About Section
         aboutTitle: "SOBRE NOSOTROS",
-        aboutText1: "Pulse Tobacco Enterprise FZ-LLC, fundada en diciembre de 2024, es un proveedor global de confianza de tabaco, conectado con los fabricantes de tabaco más exigentes del mundo.",
-        aboutText2: "En Pulse Tobacco mantenemos un proceso empresarial estricto, garantizando los mejores productos de tabaco del mercado.",
+        aboutHeadline: "Socio Global de Confianza en Tabaco",
+        aboutDescription1: "Pulse Tobacco, fundada en la recta final de 2024 por Jonas Wojahn, es una empresa comercializadora de tabaco que busca explorar su potencial en el mercado global. Pulse mantiene un estricto proceso de negocio, garantizando los mejores productos de tabaco del mercado. Combinamos la experiencia tradicional con la logística moderna para cumplir nuestras promesas, cada vez.",
+        checkMission: "Integridad y Transparencia",
+        checkServe: "Socio Global de Fabricantes",
+        checkQuality: "Estándares de Calidad Inquebrantables",
+        checkTeam: "15+ Años de Experiencia",
         
         // Sourcing Section
         sourcingTitle: "ABASTECIMIENTO",
@@ -202,8 +210,12 @@ const translations = {
         
         // About Section
         aboutTitle: "SOBRE NÓS",
-        aboutText1: "Pulse Tobacco Enterprise FZ-LLC, fundada em dezembro de 2024, é um fornecedor global confiável de tabaco, conectado com os fabricantes de tabaco mais exigentes do mundo.",
-        aboutText2: "Aqui na Pulse Tobacco mantemos um processo de negócios rigoroso, garantindo os melhores produtos de tabaco do mercado.",
+        aboutHeadline: "Parceiro Global de Confiança em Tabaco",
+        aboutDescription1: "A Pulse Tobacco, fundada na reta final de 2024 por Jonas Wojahn, é uma empresa comercializadora de tabaco que busca explorar seu potencial no mercado global. A Pulse mantém um rigoroso processo de negócios, garantindo os melhores produtos de tabaco do mercado. Combinamos a experiência tradicional com a logística moderna para cumprir nossas promessas, sempre.",
+        checkMission: "Integridade e Transparência",
+        checkServe: "Parceiro Global de Fabricantes",
+        checkQuality: "Padrões de Qualidade Inabaláveis",
+        checkTeam: "15+ Anos de Experiência",
         
         // Sourcing Section
         sourcingTitle: "ABASTECIMENTO",

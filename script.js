@@ -370,28 +370,111 @@ window.addEventListener('resize', handleResize);
 
 // ============================================
 // INTERSECTION OBSERVER (Fade-in animations)
-// Optional: Uncomment to add fade-in effects
 // ============================================
-/*
+
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
+            // Stop observing once visible to prevent re-triggering
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe sections
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
+// Elements to animate
+// Elements to animate
+const animatedElements = [
+    '.about-images-col',
+    '.about-label',
+    '.about-headline',
+    '.about-description',
+    '.about-check-item',
+    '.cta-button',
+    '.sourcing-text-container',
+    '.image-sourcing',
+    '.sampling-text-container',
+    '.image-sampling',
+    '.logistics-text-container',
+    '.image-logistics',
+    '.sourcing-title',
+    '.sampling-title',
+    '.logistics-title'
+];
+
+// Special handling to stagger check items
+document.querySelectorAll('.about-check-item').forEach((item, index) => {
+    item.style.setProperty('--delay', `${0.8 + (index * 0.1)}s`);
 });
-*/
+
+document.querySelectorAll(animatedElements.join(',')).forEach(el => {
+    // Add base transition class if not present
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    
+    // Add stagger delay for specific about-us elements
+    let delay = '0s';
+
+    if (el.classList.contains('about-images-col')) {
+        el.style.transform = 'translateX(-30px)'; 
+        delay = '0.2s';
+    }
+    if (el.classList.contains('about-label')) delay = '0.4s';
+    if (el.classList.contains('about-headline')) delay = '0.5s';
+    if (el.classList.contains('about-description')) delay = '0.6s';
+    
+    // Use the custom property for check items if it exists
+    if (el.classList.contains('about-check-item')) {
+        delay = el.style.getPropertyValue('--delay') || '0.8s';
+    }
+    
+    if (el.classList.contains('cta-button')) delay = '1.0s';
+    
+    el.style.transition = `opacity 0.8s ease-out ${delay}, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${delay}`;
+    
+    // Create a visibility class dynamic rule or just set inline on intersect
+    // We'll use a class 'visible' mechanism
+    observer.observe(el);
+});
+
+// Add CSS rule for .visible via JS to ensure it overrides inline styles
+const style = document.createElement('style');
+style.innerHTML = `
+    .visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+`;
+document.head.appendChild(style);
+
+// ============================================
+// PRODUCTS TABS ENHANCEMENTS
+// ============================================
+// Enhanced width calculation for smoother resizing
+const productTabsContainer = document.querySelector('.products-tabs-container');
+if (productTabsContainer) {
+    // Force recalculate on window resize
+    window.addEventListener('resize', debounce(() => {
+        // Trigger a click on the active tab to re-verify widths if needed
+        // or just let CSS handle it (our new CSS is robust)
+        const activeTab = document.querySelector('.product-tab.active');
+        if (!activeTab && window.innerWidth > 768) {
+            // If no tab is active on desktop, maybe activate the first one?
+            // Actually, keep them equal is better.
+        }
+    }, 200));
+}
+
+// Ensure first tab is active by default on desktop for better first impression
+if (window.innerWidth > 768) {
+    const firstTab = document.querySelector('.product-tab');
+    if (firstTab && !document.querySelector('.product-tab.active')) {
+        // Optional: firstTab.click(); 
+        // User didn't ask for this, so I'll leave it neutral
+    }
+}

@@ -39,6 +39,16 @@
     z-index: 2;
 }
 
+/* Hero title container - left aligned for find-us page */
+.hero-find-us .hero-title-container {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.hero-find-us .hero-gold-divider {
+    margin: 20px 0;
+}
+
 /* Events Section */
 .events-section {
     padding: 80px 40px;
