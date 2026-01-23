@@ -36,7 +36,7 @@ const translations = {
         logisticsText: "Efficient supply chain management from origin to destination. We handle documentation, compliance, and shipping coordination. Flexible shipment sizes and reliable delivery schedules.",
         
         // Products Section
-        productsTitle: "PRODUCTS",
+        productsTitle: "VARIETIES",
         
         // FCV Product
         fcvDesc: "Flue-Cured Virginia tobacco, known for its bright golden color and naturally sweet taste profile.",
@@ -86,7 +86,7 @@ const translations = {
         footerProducts: "PRODUCTS",
         footerFindUs: "FIND US",
         footerCopyright: "© 2026 Pulse Tobacco Enterprise FZ-LLC. All rights reserved.",
-        footerWebsite: "Website by ",
+        footerWebsite: "Website by Bruno Wojahn",
 
         // Add to en object:
         findUsHeroTitle: "FIND US",
@@ -133,7 +133,7 @@ const translations = {
         logisticsText: "Gestión eficiente de la cadena de suministro desde el origen hasta el destino. Manejamos documentación, cumplimiento y coordinación de envíos. Tamaños de envío flexibles y cronogramas de entrega confiables.",
         
         // Products Section
-        productsTitle: "PRODUCTOS",
+        productsTitle: "VARIEDADES",
         
         // FCV Product
         fcvDesc: "Tabaco Virginia curado al aire caliente, conocido por su color dorado brillante y perfil de sabor naturalmente dulce.",
@@ -183,7 +183,7 @@ const translations = {
         footerProducts: "PRODUCTOS",
         footerFindUs: "ENCUÉNTRANOS",
         footerCopyright: "© 2026 Pulse Tobacco Enterprise FZ-LLC. Todos los derechos reservados.",
-        footerWebsite: "Sitio web por ",
+        footerWebsite: "Sitio web por Bruno Wojahn",
 
         // Add to es object:
         findUsHeroTitle: "ENCUÉNTRANOS",
@@ -230,7 +230,7 @@ const translations = {
         logisticsText: "Gestão eficiente da cadeia de suprimentos da origem ao destino. Cuidamos de documentação, conformidade e coordenação de remessa. Tamanhos de remessa flexíveis e cronogramas de entrega confiáveis.",
         
         // Products Section
-        productsTitle: "PRODUTOS",
+        productsTitle: "VARIEDADES",
         
         // FCV Product
         fcvDesc: "Tabaco Virginia curado em estufa, conhecido por sua cor dourada brilhante e perfil de sabor naturalmente doce.",
@@ -280,7 +280,7 @@ const translations = {
         footerProducts: "PRODUTOS",
         footerFindUs: "ENCONTRE-NOS",
         footerCopyright: "© 2026 Pulse Tobacco Enterprise FZ-LLC. Todos os direitos reservados.",
-        footerWebsite: "Website por ",
+        footerWebsite: "Website por Bruno Wojahn",
 
         // Add to pt object:
         findUsHeroTitle: "ENCONTRE-NOS",
