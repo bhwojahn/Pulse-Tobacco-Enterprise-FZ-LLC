@@ -8,13 +8,15 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: left;
-    padding-left: 100px;
+    justify-content: flex-start;
     align-items: center;
+    padding-left: 100px;
     background-image: url('./imgs/bg/dubai-hero.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
 }
 
 .hero-find-us::before {
@@ -24,7 +26,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(2, 0, 17, 0.596);
+    background: rgba(2, 1, 14, 0.664);
+    backdrop-filter: blur(4px);
     z-index: 1;
 }
 
@@ -39,14 +42,39 @@
     z-index: 2;
 }
 
-/* Hero title container - left aligned for find-us page */
+/* Hero title container - left aligned on desktop */
 .hero-find-us .hero-title-container {
+    position: relative;
+    z-index: 3;
     text-align: left;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 25px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Use same responsive sizing as index hero */
+.hero-find-us .hero-title {
+    font-size: clamp(3.5rem, 6vw, 9rem);
+    letter-spacing: 0.15em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.hero-find-us .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    letter-spacing: 0.4em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .hero-find-us .hero-gold-divider {
     margin: 20px 0;
+    align-self: flex-start; /* Keep it left-aligned on desktop */
 }
 
 /* Events Section */
@@ -94,19 +122,19 @@
     font-family: 'Arkhip', sans-serif;
     font-size: clamp(2rem, 4vw, 2.5rem);
     letter-spacing: 0.1em;
-    color: var(--gold);
+    color: #C2BA79;
     margin: 0;
 }
 
 .event-location {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
-    color: var(--white);
+    color: #dde0ad;
     font-weight: 500;
 }
 
 .event-dates {
     font-size: clamp(1rem, 2vw, 1.1rem);
-    color: var(--gold);
+    color: #C2BA79;
     font-weight: 400;
 }
 
@@ -123,8 +151,8 @@
     margin-top: 20px;
     padding: 14px 40px;
     background: rgba(2, 0, 17, 0.8);
-    border: 2px solid var(--gold);
-    color: var(--gold);
+    border: 2px solid #C2BA79;
+    color: #C2BA79;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -136,8 +164,8 @@
 }
 
 .event-button:hover {
-    background: var(--gold);
-    color: var(--navy);
+    background: #C2BA79;
+    color: #05021d;
     transform: translateX(5px);
     box-shadow: 0 5px 20px rgba(194, 186, 121, 0.4);
 }
@@ -163,7 +191,7 @@
 }
 
 /* ============================================
-   RESPONSIVE - TABLET
+   RESPONSIVE - TABLET (768px - 1024px)
    ============================================ */
 @media screen and (max-width: 1024px) {
     .events-section {
@@ -183,15 +211,57 @@
     .event-logo img {
         max-width: 140px;
     }
+
+    /* HERO CENTERING FOR TABLET */
+    .hero-find-us {
+        justify-content: center;
+        padding-left: 0;
+        padding: 0 40px;
+    }
+
+    .hero-find-us .hero-title-container {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-find-us .hero-gold-divider {
+        margin: 20px auto;
+        align-self: center; /* Override to center on tablet */
+    }
 }
 
 /* ============================================
-   RESPONSIVE - MOBILE
+   RESPONSIVE - MOBILE (max 768px)
    ============================================ */
 @media screen and (max-width: 768px) {
+    /* HERO CENTERING FOR MOBILE */
     .hero-find-us {
-        height: 60vh;
-        min-height: 400px;
+        background-attachment: scroll;
+        height: 100vh;
+        background-position: center;
+        justify-content: center;
+        padding-left: 0;
+        padding: 0 20px;
+    }
+
+    .hero-find-us .hero-title-container {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-find-us .hero-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        letter-spacing: 0.15em;
+    }
+
+    .hero-find-us .hero-subtitle {
+        font-size: clamp(0.9rem, 3.5vw, 1.3rem);
+        letter-spacing: 0.15em;
+    }
+
+    .hero-find-us .hero-gold-divider {
+        margin: 20px auto;
+        align-self: center; /* Override to center on mobile */
     }
 
     .events-section {
@@ -231,7 +301,7 @@
 }
 
 /* ============================================
-   RESPONSIVE - SMALL MOBILE
+   RESPONSIVE - SMALL MOBILE (max 480px)
    ============================================ */
 @media screen and (max-width: 480px) {
     .event-card {

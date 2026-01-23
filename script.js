@@ -245,6 +245,13 @@ function initializeProductsTabs() {
     }
 
     function updateTabWidths() {
+        if (window.innerWidth <= 768) {
+            productTabs.forEach(tab => {
+                tab.style.width = ''; // Let CSS handle vertical mobile layout
+            });
+            return;
+        }
+
         productTabs.forEach(tab => {
             const productId = tab.getAttribute('data-product-id');
             
