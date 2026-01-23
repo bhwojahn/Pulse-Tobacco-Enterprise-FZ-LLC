@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Received - Pulse Tobacco Enterprise</title>
+  <link rel="icon" type="image/png" href="./imgs/logos/symbol.svg">
+  <style>
+    /* ============================================
+       FONT IMPORTS
+       ============================================ */
+    @font-face {
+        font-family: 'Arkhip';
+        src: url('fonts/arkhip_font.ttf') format('truetype');
+        font-weight: bold;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Salaryma';
+        src: url('fonts/SALARYMA.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
+    }
+
+    /* ============================================
+       CSS VARIABLES
+       ============================================ */
+    :root {
+        --navy: #05021d;
+        --navy-deep: #02010e;
+        --gold: #C2BA79;
+        --gold-bright: #d4cc8c;
+        --white: #dde0ad;
+        --white-pure: #ffffff;
+        --gold-light: #F5EC9B;
+        --gold-dark: #8F8A5A;
+        --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+        height: 100%;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', 'Arial', sans-serif;
+        font-weight: 300;
+        background-color: var(--navy);
+        color: var(--white);
+        line-height: 1.8;
+        overflow-x: hidden;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ============================================
+       SUCCESS CONTAINER
+       ============================================ */
+    .success-container {
+        text-align: center;
+        padding: 60px 40px;
+        max-width: 700px;
+        width: 100%;
+        animation: fadeInUp 1s var(--ease-out-expo) forwards;
+        opacity: 0;
+    }
+
+    .check-icon {
+        width: 140px;
+        height: 140px;
+        border: 3px solid var(--gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 50px;
+        position: relative;
+        box-shadow: 0 0 30px rgba(194, 186, 121, 0.3),
+                    0 0 60px rgba(194, 186, 121, 0.15);
+        animation: pulseGlow 2s ease-in-out infinite;
+    }
+
+    .check-icon::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 25px;
+        border-left: 4px solid var(--gold);
+        border-bottom: 4px solid var(--gold);
+        transform: rotate(-45deg) translateY(-8px);
+        animation: checkDraw 0.8s var(--ease-out-expo) 0.3s forwards;
+        opacity: 0;
+    }
+
+    .success-title {
+        font-family: 'Salaryma', sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        letter-spacing: 0.15em;
+        margin-bottom: 20px;
+        background: linear-gradient(
+            90deg,
+            #868157 0%,
+            #a09b70 25%,
+            #C2BA79 50%,
+            hsl(54, 71%, 80%) 75%,
+            #999369 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+        animation: liquidGold 6s ease-in-out infinite;
+        text-transform: uppercase;
+    }
+
+    .gold-divider {
+        height: 2px;
+        width: 100%;
+        max-width: 280px;
+        background: radial-gradient(ellipse at center, var(--gold-light) 0%, var(--gold-dark) 100%);
+        margin: 30px auto;
+        border-radius: 2px;
+        box-shadow: 0 0 15px rgba(194, 186, 121, 0.4);
+        animation: expandWidth 1.2s var(--ease-out-expo) 0.5s forwards;
+        width: 0;
+    }
+
+    .success-heading {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        letter-spacing: 0.3em;
+        color: var(--white);
+        margin-bottom: 30px;
+        font-weight: 300;
+        text-transform: uppercase;
+        animation: fadeInUp 1s var(--ease-out-expo) 0.4s forwards;
+        opacity: 0;
+    }
+
+    .success-message {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.9;
+        color: rgba(221, 224, 173, 0.85);
+        margin-bottom: 50px;
+        font-weight: 300;
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 1s var(--ease-out-expo) 0.6s forwards;
+        opacity: 0;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        animation: fadeInUp 1s var(--ease-out-expo) 0.8s forwards;
+        opacity: 0;
+    }
+
+    .return-button {
+        display: inline-block;
+        padding: 18px 60px;
+        background: transparent;
+        border: 2px solid var(--gold);
+        color: var(--gold);
+        text-decoration: none;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        border-radius: 4px;
+        transition: all 0.4s var(--ease-out-expo);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .return-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--gold);
+        transition: left 0.4s var(--ease-out-expo);
+        z-index: -1;
+    }
+
+    .return-button:hover {
+        color: var(--navy);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(194, 186, 121, 0.3);
+    }
+
+    .return-button:hover::before {
+        left: 0;
+    }
+
+    .contact-assistance {
+        font-size: 0.95rem;
+        color: rgba(221, 224, 173, 0.6);
+        margin-top: 20px;
+    }
+
+    .contact-link {
+        color: var(--gold);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid transparent;
+    }
+
+    .contact-link:hover {
+        color: var(--gold-light);
+        border-bottom-color: var(--gold-light);
+    }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes expandWidth {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes liquidGold {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    @keyframes pulseGlow {
+        0%, 100% {
+            box-shadow: 0 0 30px rgba(194, 186, 121, 0.3),
+                        0 0 60px rgba(194, 186, 121, 0.15);
+        }
+        50% {
+            box-shadow: 0 0 40px rgba(194, 186, 121, 0.5),
+                        0 0 80px rgba(194, 186, 121, 0.25);
+        }
+    }
+
+    @keyframes checkDraw {
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* ============================================
+       LANGUAGE SELECTOR
+       ============================================ */
+    .language-selector {
+        position: fixed;
+        top: 30px;
+        right: 40px;
+        z-index: 1001;
+    }
+
+    .language-current {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border: 2px solid var(--gold);
+        opacity: 0.6;
+    }
+
+    .language-current:hover {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    .language-flag-current {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .language-dropdown {
+        position: fixed;
+        top: 100px;
+        right: -100px;
+        background: rgba(5, 2, 29, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid var(--gold);
+        border-right: none;
+        border-radius: 30px 0 0 30px;
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 70px;
+        transition: right 0.4s ease-in-out;
+    }
+
+    .language-dropdown.active {
+        right: 0;
+    }
+
+    .language-flag-option {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease, border 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .language-flag-option:hover {
+        transform: scale(1.1);
+        border: 2px solid var(--gold-light);
+    }
+
+    .language-flag-option.active {
+        border: 2px solid var(--gold);
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media screen and (max-width: 768px) {
+        .success-container {
+            padding: 40px 20px;
+        }
+
+        .check-icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 40px;
+        }
+
+        .check-icon::before {
+            width: 35px;
+            height: 18px;
+            border-left-width: 3px;
+            border-bottom-width: 3px;
+        }
+
+        .success-message {
+            margin-bottom: 40px;
+        }
+
+        .return-button {
+            padding: 16px 40px;
+            font-size: 0.9rem;
+        }
+
+        .language-selector {
+            top: 20px;
+            right: 20px;
+        }
+
+        .language-current {
+            width: 35px;
+            height: 35px;
+        }
+
+        .language-flag-option {
+            width: 35px;
+            height: 35px;
+        }
+
+        .language-dropdown {
+            top: 80px;
+            padding: 12px 15px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <div class="check-icon"></div>
+    
+    <h1 class="success-title" data-translate="successTitle">Message Received</h1>
+    
+    <div class="gold-divider"></div>
+    
+    <h2 class="success-heading" data-translate="successHeading">Thank You For Reaching Out</h2>
+    
+    <p class="success-message" data-translate="successMessage">
+      We appreciate your inquiry. Our team will review your message and get back to you shortly.
+    </p>
+    
+    <div class="button-container">
+      <a href="https://bhwojahn.github.io/Pulse-Tobacco-Enterprise-FZ-LLC/index.html" class="return-button" data-translate="successButton">Return Home</a>
+      
+      <p class="contact-assistance">
+        <span data-translate="successAssistancePrefix">Need immediate assistance?</span> <a href="mailto:jwojahn@pulsetobacco.com" class="contact-link" data-translate="successAssistanceLink">Contact us directly</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="./tanslation.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
