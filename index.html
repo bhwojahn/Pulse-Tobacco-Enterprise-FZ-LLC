@@ -221,26 +221,104 @@
     </div>
   </section>
   
-  <section class="contact-us" id="contact-us">
-    <div class="contact-title-container">
-      <p class="contact-title-main" data-translate="contactTitle">CONTACT US</p>
-      <div class="contact-gold-divider" id="contact-gold-divider"></div>
-    </div>
+<!-- ============================================ -->
+<!-- CONTACT SECTION - PULSE TOBACCO -->
+<!-- Web3Forms Integration - Production Ready -->
+<!-- ============================================ -->
 
-    <div class="contact-form">
-      <form>
-        <input class="form-input" data-translate-placeholder="contactName" placeholder="Insert your name please." type="text">
-        <input class="form-input" data-translate-placeholder="contactEmail" placeholder="Insert your email please." type="email">
-        <input class="form-input" data-translate-placeholder="contactCountry" placeholder="Insert your country please." type="search">
-        <input class="form-input-big" data-translate-placeholder="contactMessage" placeholder="Insert your message please." type="text">
-        <a href="./index.html#footer" class="get-in-contact-links" data-translate="contactLinks">
-          get in contact through the links found here
-        </a>
-        <button onclick="submit()" data-translate="contactSubmit">SUBMIT</button>
-        <input type="hidden" name="redirect" value="https://bhwojahn.github.io/Pulse-Tobacco-Enterprise-FZ-LLC/form-redirect.html">
-      </form>
-    </div>
-  </section>
+<section class="contact-us" id="contact-us">
+  <div class="contact-title-container">
+    <p class="contact-title-main" data-translate="contactTitle">CONTACT US</p>
+    <div class="contact-gold-divider" id="contact-gold-divider"></div>
+  </div>
+
+  <div class="contact-form">
+    <form
+      id="contact-form"
+      class="contact-form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      novalidate
+    >
+      <!-- Web3Forms Access Key -->
+      <input type="hidden" name="access_key" value="c27e2e0d-055a-4e9b-9108-abdc69915b4d">
+
+      <!-- Redirect after success - PRODUCTION URL -->
+      <input type="hidden" name="redirect" value="https://bhwojahn.github.io/Pulse-Tobacco-Enterprise-FZ-LLC/form-redirect.html">
+      
+      <!-- Custom email subject -->
+      <input type="hidden" name="subject" value="New Website Inquiry from Pulse Tobacco">
+      
+      <!-- Custom from name -->
+      <input type="hidden" name="from_name" value="Pulse Tobacco Website">
+
+      <!-- Spam protection (honeypot) -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+      <!-- Name Field -->
+      <div class="field">
+        <input 
+          id="name" 
+          name="name" 
+          type="text" 
+          class="form-input"
+          data-translate-placeholder="contactName"
+          placeholder="Insert your name please."
+          required
+        >
+      </div>
+
+      <!-- Email Field -->
+      <div class="field">
+        <input 
+          id="email" 
+          name="email" 
+          type="email" 
+          class="form-input"
+          data-translate-placeholder="contactEmail"
+          placeholder="Insert your email please."
+          required
+        >
+      </div>
+
+      <!-- Country Field -->
+      <div class="field">
+        <input 
+          id="country" 
+          name="country" 
+          type="text" 
+          class="form-input"
+          data-translate-placeholder="contactCountry"
+          placeholder="Insert your country please."
+          required
+        >
+      </div>
+
+      <!-- Message Field -->
+      <div class="field">
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="6" 
+          class="form-input-big"
+          data-translate-placeholder="contactMessage"
+          placeholder="Insert your message please."
+          required
+        ></textarea>
+      </div>
+
+      <!-- Additional Contact Link -->
+      <a href="./index.html#footer" class="get-in-contact-links" data-translate="contactLinks">
+        get in contact through the links found here
+      </a>
+
+      <!-- Submit Button -->
+      <div class="field">
+        <button type="submit" data-translate="contactSubmit">SUBMIT</button>
+      </div>
+    </form>
+  </div>
+</section>
 
   <div class="full-gold-divider" id="full-gold-divider"></div>
 

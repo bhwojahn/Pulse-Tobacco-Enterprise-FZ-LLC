@@ -94,36 +94,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ============================================
-    // FORM VALIDATION (Basic)
-    // ============================================
-    const contactForm = document.querySelector('.contact-form form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const inputs = this.querySelectorAll('.form-input, .form-input-big');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.style.borderColor = '#ff4444';
-                    isValid = false;
-                } else {
-                    input.style.borderColor = 'rgba(194, 186, 121, 0.3)';
-                }
-            });
-            
-            if (isValid) {
-                // For now, just show an alert
-                // Later we'll connect this to the Python backend
-                alert('Thank you for your message! We will get back to you soon.');
-                this.reset();
+// FORM VALIDATION (Basic)
+// ============================================
+const contactForm = document.querySelector('.contact-form form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        const inputs = this.querySelectorAll('.form-input, .form-input-big');
+        let isValid = true;
+        
+        // Validate inputs
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                input.style.borderColor = '#ff4444';
+                isValid = false;
             } else {
-                alert('Please fill in all required fields.');
+                input.style.borderColor = 'rgba(194, 186, 121, 0.3)';
             }
         });
-    }
+        
+        // If validation fails, prevent submission
+        if (!isValid) {
+            e.preventDefault();
+            alert('Please fill in all required fields.');
+        }
+        // If valid, let the form submit naturally to Web3Forms
+        // The redirect will be handled by Web3Forms automatically
+    });
+}
 
     // ============================================
     // TIMELINE NAVIGATION (Products Section)
