@@ -7,6 +7,9 @@
 
   <link rel="stylesheet" href="./styles.css">
   <link rel="icon" type="image/png" href="./imgs/logos/symbol.svg">
+  
+  <!-- Preload critical hero image -->
+  <link rel="preload" href="./imgs/bg/test5.jpg" as="image">
 </head>
 <body>
 
@@ -15,7 +18,7 @@
       <a class="navlinks" href="./index.html#about-us" data-translate="navAbout">ABOUT US</a>
       <a class="navlinks" href="./index.html#products" data-translate="navProducts">PRODUCTS</a>
       <a class="navlinks" href="./index.html#hero">
-        <img class="logo" src="./imgs/logos/symbol.svg">
+        <img class="logo" src="./imgs/logos/symbol.svg" alt="Pulse Tobacco Logo" width="42" height="42">
       </a>
       <a class="navlinks" href="./index.html#contact-us" data-translate="navContact">CONTACT</a>
       <a class="navlinks" href="./find-us.html" data-translate="navFindUs">FIND US</a>
@@ -23,12 +26,12 @@
 
     <div class="language-selector">
       <div class="language-current" id="language-current">
-        <img src="./imgs/flags/en.svg" alt="English" class="language-flag-current" id="current-flag">
+        <img src="./imgs/flags/en.svg" alt="English" class="language-flag-current" id="current-flag" width="40" height="40">
       </div>
       <div class="language-dropdown" id="language-dropdown">
-        <img src="./imgs/flags/en.svg" alt="English" class="language-flag-option" data-lang="en">
-        <img src="./imgs/flags/es.svg" alt="Español" class="language-flag-option" data-lang="es">
-        <img src="./imgs/flags/pt.svg" alt="Português" class="language-flag-option" data-lang="pt">
+        <img src="./imgs/flags/en.svg" alt="English" class="language-flag-option" data-lang="en" width="40" height="40">
+        <img src="./imgs/flags/es.svg" alt="Español" class="language-flag-option" data-lang="es" width="40" height="40">
+        <img src="./imgs/flags/pt.svg" alt="Português" class="language-flag-option" data-lang="pt" width="40" height="40">
       </div>
     </div>
 
@@ -44,10 +47,10 @@
       <!-- Left Column: Images -->
       <div class="about-images-col">
         <div class="about-img-wrapper main-img">
-          <img src="imgs/bg/test2.jpg" alt="Tobacco Sourcing" loading="lazy">
+          <img src="imgs/bg/test2.jpg" alt="Tobacco Sourcing" loading="lazy" width="800" height="800">
         </div>
         <div class="about-img-wrapper overlay-img">
-          <img src="imgs/bg/open-bails.jpg" alt="Tobacco Bails" loading="lazy">
+          <img src="imgs/bg/open-bails.jpg" alt="Tobacco Bails" loading="lazy" width="500" height="500">
         </div>
       </div>
 
@@ -87,7 +90,7 @@
 
   <section class="sourcing" id="sourcing">
     <div class="image-sourcing">
-      <img src="./imgs/bg/sourcing.jpg">
+      <img src="./imgs/bg/sourcing.jpg" alt="Tobacco Sourcing Process" loading="lazy" width="1200" height="800">
     </div>
 
     <div class="sourcing-text-container">
@@ -101,7 +104,7 @@
 
   <section class="sampling" id="sampling">
     <div class="image-sampling">
-      <img src="./imgs/bg/sampling.png">
+      <img src="./imgs/bg/sampling.png" alt="Tobacco Sampling and Testing" loading="lazy" width="1200" height="800">
     </div>
 
     <div class="sampling-text-container">
@@ -115,7 +118,7 @@
 
   <section class="logistics" id="logistics">
     <div class="image-logistics">
-      <img src="./imgs/bg/logistics.png">
+      <img src="./imgs/bg/logistics.png" alt="Tobacco Logistics and Shipping" loading="lazy" width="1200" height="800">
     </div>
 
     <div class="logistics-text-container">
@@ -135,7 +138,7 @@
     
     <div class="products-tabs-container">
       <div class="product-tab" data-product-id="fcv">
-        <div class="product-tab-bg" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80')"></div>
+        <div class="product-tab-bg" data-bg="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=60"></div>
         <div class="product-tab-overlay"></div>
         <div class="product-tab-content">
           <h3 class="product-vertical-title">FCV</h3>
@@ -153,7 +156,7 @@
       </div>
 
       <div class="product-tab" data-product-id="acb">
-        <div class="product-tab-bg" style="background-image: url(./imgs/bg/test.jpg)"></div>
+        <div class="product-tab-bg" data-bg="./imgs/bg/test.jpg"></div>
         <div class="product-tab-overlay"></div>
         <div class="product-tab-content">
           <h3 class="product-vertical-title">ACB</h3>
@@ -171,7 +174,7 @@
       </div>
 
       <div class="product-tab" data-product-id="oriental">
-        <div class="product-tab-bg" style="background-image: url(./imgs/bg/test4.jpg)"></div>
+        <div class="product-tab-bg" data-bg="./imgs/bg/test4.jpg"></div>
         <div class="product-tab-overlay"></div>
         <div class="product-tab-content">
           <h3 class="product-vertical-title">ORIENTAL</h3>
@@ -189,7 +192,7 @@
       </div>
 
       <div class="product-tab" data-product-id="dac">
-        <div class="product-tab-bg" style="background-image: url(./imgs/bg/test2.jpg)"></div>
+        <div class="product-tab-bg" data-bg="./imgs/bg/test2.jpg"></div>
         <div class="product-tab-overlay"></div>
         <div class="product-tab-content">
           <h3 class="product-vertical-title">DAC</h3>
@@ -207,7 +210,7 @@
       </div>
 
       <div class="product-tab" data-product-id="dfc">
-        <div class="product-tab-bg" style="background-image: url(./imgs/bg/test3.jpg)"></div>
+        <div class="product-tab-bg" data-bg="./imgs/bg/test3.jpg"></div>
         <div class="product-tab-overlay"></div>
         <div class="product-tab-content">
           <h3 class="product-vertical-title">DFC</h3>
@@ -365,7 +368,7 @@
     <p class="mini-footer-text" data-translate="footerWebsite">Website by Bruno Wojahn</p>
   </div>
 
-  <script src="./tanslation.js"></script>
+  <script src="./tanslation.js" defer></script>
   <script src="./script.js" defer></script>
   <script src="./verification-modal.js" defer></script>
 </body> 
