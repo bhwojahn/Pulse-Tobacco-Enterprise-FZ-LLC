@@ -454,22 +454,29 @@ p, a, li, input, textarea, button {
     letter-spacing: 0.15em;
     margin: 0;
     background: linear-gradient(
-        90deg,
-        #868157 0%,
-        #a09b70 25%,
-        #C2BA79 50%,
-        hsl(54, 71%, 80%) 75%,
-        #999369 100%
+        110deg,
+        #B8942F 0%,
+        #FFD86E 10%,
+        #D4A72C 20%,
+        #FFF4C3 30%,
+        #C2BA79 40%,
+        #FFE27A 50%,
+        #D4AF37 60%,
+        #FFD86E 70%,
+        #C9A62B 80%,
+        #FFF5D1 90%,
+        #D19E1D 100%
     );
-    background-size: 200% auto;
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5)) 
-            drop-shadow(0 0 15px rgba(194, 186, 121, 0.3)) 
-            drop-shadow(0 0 30px rgba(194, 186, 121, 0.15));
-    animation: liquidGold 6s ease-in-out infinite;
+    -webkit-text-stroke: 0.8px rgba(139, 117, 43, 0.3);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6)) 
+            drop-shadow(0 0 20px rgba(255, 215, 110, 0.4)) 
+            drop-shadow(0 0 40px rgba(194, 186, 121, 0.25));
+    animation: liquidGoldFlow 8s ease-in-out infinite;
+    position: relative;
 }
 
 .hero-gold-divider {
@@ -1585,11 +1592,21 @@ img {
     }
 }
 
-@keyframes liquidGold {
-    0%, 100% {
+/* Enhanced Liquid Gold Animation */
+@keyframes liquidGoldFlow {
+    0% {
         background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 75%;
     }
     50% {
         background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 25%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
