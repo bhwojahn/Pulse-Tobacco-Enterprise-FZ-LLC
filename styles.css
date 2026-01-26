@@ -395,7 +395,7 @@ p, a, li, input, textarea, button {
     justify-content: center;
     align-items: center;
     padding: 0 40px;
-    background-image: url('imgs/bg/test5.jpg');
+    background-image: url('imgs/bgWebP/test5.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -656,6 +656,7 @@ p, a, li, input, textarea, button {
 .logistics-text-container {
     padding: 80px;
     background: rgba(5, 2, 29, 0.92);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(194, 186, 121, 0.1);
     z-index: 5;
     display: flex;
