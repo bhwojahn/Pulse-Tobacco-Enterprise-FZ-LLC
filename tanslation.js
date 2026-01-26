@@ -21,7 +21,7 @@ const translations = {
         checkMission: "Integrity & Transparency",
         checkServe: "Global Manufacturer Partner",
         checkQuality: "Unyielding Quality Standards",
-        checkTeam: "15+ Years Experience",
+        checkTeam: "25+ Years Experience",
         
         // Sourcing Section
         sourcingTitle: "SOURCING",
@@ -123,7 +123,7 @@ const translations = {
         checkMission: "Integridad y Transparencia",
         checkServe: "Socio Global de Fabricantes",
         checkQuality: "Estándares de Calidad Inquebrantables",
-        checkTeam: "15+ Años de Experiencia",
+        checkTeam: "25+ Años de Experiencia",
         
         // Sourcing Section
         sourcingTitle: "ABASTECIMIENTO",
@@ -225,7 +225,7 @@ const translations = {
         checkMission: "Integridade e Transparência",
         checkServe: "Parceiro Global de Fabricantes",
         checkQuality: "Padrões de Qualidade Inabaláveis",
-        checkTeam: "15+ Anos de Experiência",
+        checkTeam: "25+ Anos de Experiência",
         
         // Sourcing Section
         sourcingTitle: "ABASTECIMENTO",
