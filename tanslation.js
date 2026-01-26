@@ -36,37 +36,42 @@ const translations = {
         logisticsText: "Efficient supply chain management from origin to destination. We handle documentation, compliance, and shipping coordination. Flexible shipment sizes and reliable delivery schedules.",
         
         // Products Section
-        productsTitle: "VARIETIES",
+        productsTitle: "PRODUCTS & VARIETIES",
         
         // FCV Product
         fcvDesc: "Flue-Cured Virginia tobacco, known for its bright golden color and naturally sweet taste profile.",
-        fcvUse1: "Cigarette blends",
-        fcvUse2: "Premium pipe tobacco",
-        fcvUse3: "Export markets",
+        fcvFormat1: "Strips",
+        fcvFormat2: "Fines",
+        fcvFormat3: "Stems",
+        fcvFormat4: "Reconstituted",
         
         // ACB Product
         acbDesc: "Air-Cured Burley tobacco with rich, full-bodied flavor and excellent blending properties.",
-        acbUse1: "American blends",
-        acbUse2: "Chewing tobacco",
-        acbUse3: "Cigar filler",
+        acbFormat1: "Strips",
+        acbFormat2: "Fines",
+        acbFormat3: "Stems",
+        acbFormat4: "Reconstituted",
         
         // Oriental Product
         orientalDesc: "Sun-cured Oriental varieties prized for their aromatic complexity and mild character.",
-        orientalUse1: "Turkish blends",
-        orientalUse2: "Premium cigarettes",
-        orientalUse3: "Luxury products",
+        orientalFormat1: "Strips",
+        orientalFormat2: "Fines",
+        orientalFormat3: "Stems",
+        orientalFormat4: "Reconstituted",
         
         // DAC Product
         dacDesc: "Dark Air-Cured tobacco with robust, earthy characteristics ideal for specialty products.",
-        dacUse1: "Snuff production",
-        dacUse2: "Dark-fired blends",
-        dacUse3: "Traditional products",
+        dacFormat1: "Strips",
+        dacFormat2: "Fines",
+        dacFormat3: "Stems",
+        dacFormat4: "Reconstituted",
         
         // DFC Product
         dfcDesc: "Dark Fire-Cured tobacco offering intense smoky flavors and distinctive aromatic qualities.",
-        dfcUse1: "Pipe tobacco",
-        dfcUse2: "Specialty snuff",
-        dfcUse3: "Aromatic blends",
+        dfcFormat1: "Strips",
+        dfcFormat2: "Fines",
+        dfcFormat3: "Stems",
+        dfcFormat4: "Reconstituted",
         
         // Contact Section
         contactTitle: "CONTACT US",
@@ -88,7 +93,7 @@ const translations = {
         footerCopyright: "© 2026 Pulse Tobacco Enterprise FZ-LLC. All rights reserved.",
         footerWebsite: "Website by Bruno Wojahn",
 
-        // Add to en object:
+        // Find Us Page
         findUsHeroTitle: "FIND US",
         findUsHeroSubtitle: "OUR 2026 PROGRAMMING",
         interTabacLocation: "Dortmund, Germany",
@@ -133,37 +138,42 @@ const translations = {
         logisticsText: "Gestión eficiente de la cadena de suministro desde el origen hasta el destino. Manejamos documentación, cumplimiento y coordinación de envíos. Tamaños de envío flexibles y cronogramas de entrega confiables.",
         
         // Products Section
-        productsTitle: "VARIEDADES",
+        productsTitle: "PRODUCTOS & VARIEDADES",
         
         // FCV Product
         fcvDesc: "Tabaco Virginia curado al aire caliente, conocido por su color dorado brillante y perfil de sabor naturalmente dulce.",
-        fcvUse1: "Mezclas de cigarrillos",
-        fcvUse2: "Tabaco premium para pipa",
-        fcvUse3: "Mercados de exportación",
+        fcvFormat1: "Tiras",
+        fcvFormat2: "Finos",
+        fcvFormat3: "Tallos",
+        fcvFormat4: "Reconstituido",
         
         // ACB Product
         acbDesc: "Tabaco Burley curado al aire con sabor rico y con cuerpo y excelentes propiedades de mezcla.",
-        acbUse1: "Mezclas americanas",
-        acbUse2: "Tabaco de mascar",
-        acbUse3: "Relleno de cigarros",
+        acbFormat1: "Tiras",
+        acbFormat2: "Finos",
+        acbFormat3: "Tallos",
+        acbFormat4: "Reconstituido",
         
         // Oriental Product
         orientalDesc: "Variedades orientales curadas al sol apreciadas por su complejidad aromática y carácter suave.",
-        orientalUse1: "Mezclas turcas",
-        orientalUse2: "Cigarrillos premium",
-        orientalUse3: "Productos de lujo",
+        orientalFormat1: "Tiras",
+        orientalFormat2: "Finos",
+        orientalFormat3: "Tallos",
+        orientalFormat4: "Reconstituido",
         
         // DAC Product
         dacDesc: "Tabaco oscuro curado al aire con características robustas y terrosas ideales para productos especializados.",
-        dacUse1: "Producción de rapé",
-        dacUse2: "Mezclas curadas al fuego oscuro",
-        dacUse3: "Productos tradicionales",
+        dacFormat1: "Tiras",
+        dacFormat2: "Finos",
+        dacFormat3: "Tallos",
+        dacFormat4: "Reconstituido",
         
         // DFC Product
         dfcDesc: "Tabaco oscuro curado al fogo que ofrece sabores ahumados intensos y cualidades aromáticas distintivas.",
-        dfcUse1: "Tabaco para pipa",
-        dfcUse2: "Rapé especial",
-        dfcUse3: "Mezclas aromáticas",
+        dfcFormat1: "Tiras",
+        dfcFormat2: "Finos",
+        dfcFormat3: "Tallos",
+        dfcFormat4: "Reconstituido",
         
         // Contact Section
         contactTitle: "CONTÁCTANOS",
@@ -185,7 +195,7 @@ const translations = {
         footerCopyright: "© 2026 Pulse Tobacco Enterprise FZ-LLC. Todos los derechos reservados.",
         footerWebsite: "Sitio web por Bruno Wojahn",
 
-        // Add to es object:
+        // Find Us Page
         findUsHeroTitle: "ENCUÉNTRANOS",
         findUsHeroSubtitle: "NUESTRA PROGRAMACIÓN 2026",
         interTabacLocation: "Dortmund, Alemania",
@@ -230,37 +240,42 @@ const translations = {
         logisticsText: "Gestão eficiente da cadeia de suprimentos da origem ao destino. Cuidamos de documentação, conformidade e coordenação de remessa. Tamanhos de remessa flexíveis e cronogramas de entrega confiáveis.",
         
         // Products Section
-        productsTitle: "VARIEDADES",
+        productsTitle: "PRODUTOS & VARIEDADES",
         
         // FCV Product
         fcvDesc: "Tabaco Virginia curado em estufa, conhecido por sua cor dourada brilhante e perfil de sabor naturalmente doce.",
-        fcvUse1: "Misturas de cigarros",
-        fcvUse2: "Tabaco premium para cachimbo",
-        fcvUse3: "Mercados de exportação",
+        fcvFormat1: "Tiras",
+        fcvFormat2: "Finos",
+        fcvFormat3: "Talos",
+        fcvFormat4: "Reconstituído",
         
         // ACB Product
         acbDesc: "Tabaco Burley curado ao ar com sabor rico e encorpado e excelentes propriedades de mistura.",
-        acbUse1: "Misturas americanas",
-        acbUse2: "Tabaco de mascar",
-        acbUse3: "Enchimento de charutos",
+        acbFormat1: "Tiras",
+        acbFormat2: "Finos",
+        acbFormat3: "Talos",
+        acbFormat4: "Reconstituído",
         
         // Oriental Product
         orientalDesc: "Variedades orientais curadas ao sol valorizadas por sua complexidade aromática e caráter suave.",
-        orientalUse1: "Misturas turcas",
-        orientalUse2: "Cigarros premium",
-        orientalUse3: "Produtos de luxo",
+        orientalFormat1: "Tiras",
+        orientalFormat2: "Finos",
+        orientalFormat3: "Talos",
+        orientalFormat4: "Reconstituído",
         
         // DAC Product
         dacDesc: "Tabaco escuro curado ao ar com características robustas e terrosas ideais para produtos especializados.",
-        dacUse1: "Produção de rapé",
-        dacUse2: "Misturas curadas ao fogo escuro",
-        dacUse3: "Produtos tradicionais",
+        dacFormat1: "Tiras",
+        dacFormat2: "Finos",
+        dacFormat3: "Talos",
+        dacFormat4: "Reconstituído",
         
         // DFC Product
         dfcDesc: "Tabaco escuro curado ao fogo oferecendo sabores defumados intensos e qualidades aromáticas distintivas.",
-        dfcUse1: "Tabaco para cachimbo",
-        dfcUse2: "Rapé especial",
-        dfcUse3: "Misturas aromáticas",
+        dfcFormat1: "Tiras",
+        dfcFormat2: "Finos",
+        dfcFormat3: "Talos",
+        dfcFormat4: "Reconstituído",
         
         // Contact Section
         contactTitle: "ENTRE EM CONTATO",
@@ -282,7 +297,7 @@ const translations = {
         footerCopyright: "© 2026 Pulse Tobacco Enterprise FZ-LLC. Todos os direitos reservados.",
         footerWebsite: "Website por Bruno Wojahn",
 
-        // Add to pt object:
+        // Find Us Page
         findUsHeroTitle: "ENCONTRE-NOS",
         findUsHeroSubtitle: "NOSSA PROGRAMAÇÃO 2026",
         interTabacLocation: "Dortmund, Alemanha",
