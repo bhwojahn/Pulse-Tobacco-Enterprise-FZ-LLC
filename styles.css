@@ -611,7 +611,10 @@ p, a, li, input, textarea, button {
 }
 
 .cta-button:hover {
-    background: linear-gradient(135deg, #fff2b5, var(--gold));
+    background: #C2BA79;
+    color: #05021d;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(194, 186, 121, 0.4);
 }
 
 /* ============================================
@@ -860,8 +863,10 @@ p, a, li, input, textarea, button {
 }
 
 .contact-form button:hover {
-    background: var(--gold);
-    color: var(--navy);
+    background: #C2BA79;
+    color: #05021d;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(194, 186, 121, 0.4);
 }
 
 /* ============================================

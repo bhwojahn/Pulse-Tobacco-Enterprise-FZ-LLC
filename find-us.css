@@ -27,7 +27,6 @@
     width: 100%;
     height: 100%;
     background: rgba(2, 1, 14, 0.664);
-    backdrop-filter: blur(4px);
     z-index: 1;
 }
 
@@ -89,17 +88,43 @@
 
 /* Event Card */
 .event-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(14, 14, 14, 0.658);
     border: 1px solid rgba(194, 186, 121, 0.2);
     border-radius: 12px;
     padding: 50px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    min-height: 75vh;
+}
+
+#inter,
+#wtas,
+#wtme {
+    min-height: 75vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+#inter {
+    background-image: url('./imgs/bg/dortmund.jpg');
+    border-radius: 12px;
+}
+
+#wtas {
+    background-image: url('./imgs/bg/surabaya.png');
+    border-radius: 12px;
+}
+
+#wtme {
+    background-image: url('./imgs/bg/dubai.jpg');
+    border-radius: 12px;
 }
 
 .event-card:hover {
     border-color: rgba(194, 186, 121, 0.5);
-    transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
