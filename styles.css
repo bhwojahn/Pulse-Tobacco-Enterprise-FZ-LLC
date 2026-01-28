@@ -165,7 +165,7 @@ p, a, li, input, textarea, button {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 42px;
+    gap: 62px;
     padding: 21px 42px;
     z-index: 1000;
     transition: var(--transition-base);
@@ -1753,7 +1753,7 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shimmer 3s linear infinite;
+    animation: shimmer 20s ease-in-out infinite;
 }
 
 .stat-plus,
@@ -1895,7 +1895,7 @@ img {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-text-stroke: 0.5px rgba(139, 117, 43, 0.2);
-    animation: liquidGoldFlow 8s ease-in-out infinite;
+    animation: liquidGoldFlow 15s ease-in-out infinite;
 }
 
 /* About Section Headline */
@@ -1966,7 +1966,7 @@ img {
     background-clip: text;
     -webkit-text-stroke: 0.4px rgba(139, 117, 43, 0.2);
     color: transparent !important;
-    animation: liquidGoldFlow 8s ease-in-out infinite;
+    animation: liquidGoldFlow 15s ease-in-out infinite;
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
 }
 
@@ -1992,7 +1992,7 @@ img {
     background-clip: text;
     -webkit-text-stroke: 0.8px rgba(139, 117, 43, 0.3);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
-    animation: liquidGoldFlow 8s ease-in-out infinite;
+    animation: liquidGoldFlow 10s ease-in-out infinite;
 }
 
 /* Liquid Gold Flow Animation - Already exists but repeating for consistency */

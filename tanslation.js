@@ -9,6 +9,8 @@ const translations = {
         navProducts: "PRODUCTS",
         navContact: "CONTACT",
         navFindUs: "FIND US",
+        navLogistics: "LOGISTICS",
+        navPresence: "PRESENCE",
         
         // Hero Section
         heroTitle: "PULSE TOBACCO",
@@ -35,6 +37,14 @@ const translations = {
         logisticsTitle: "LOGISTICS",
         logisticsText: "Efficient supply chain management from origin to destination. We handle documentation, compliance, and shipping coordination. Flexible shipment sizes and reliable delivery schedules.",
         
+        //Presence Section
+        globalPresenceTitle: "GLOBAL PRESENCE",
+        globalPresenceDesc: "From our headquarters in the UAE, we connect top tier tobacco producers with manufacturers across six continents, delivering guaranteed excellence worldwide.",
+        statYears: "YEARS EXPERIENCE",
+        statCountries: "COUNTRIES SERVED",
+        statPartners: "GLOBAL PARTNERS",
+        statTons: "TONS ANNUALLY",
+
         // Products Section
         productsTitle: "PRODUCTS & VARIETIES",
         
@@ -111,6 +121,8 @@ const translations = {
         navProducts: "PRODUCTOS",
         navContact: "CONTACTO",
         navFindUs: "ENCUÉNTRANOS",
+        navLogistics: "LOGÍSTICA",
+        navPresence: "PRESENCIA",
         
         // Hero Section
         heroTitle: "PULSE TOBACCO",
@@ -137,6 +149,13 @@ const translations = {
         logisticsTitle: "LOGÍSTICA",
         logisticsText: "Gestión eficiente de la cadena de suministro desde el origen hasta el destino. Manejamos documentación, cumplimiento y coordinación de envíos. Tamaños de envío flexibles y cronogramas de entrega confiables.",
         
+        globalPresenceTitle: "PRESENCIA GLOBAL",
+        globalPresenceDesc: "Desde nuestra sede en los Emiratos Árabes Unidos, conectamos a productores de tabaco de primer nivel con fabricantes en seis continentes, entregando excelencia garantizada en todo el mundo.",
+        statYears: "AÑOS DE EXPERIENCIA",
+        statCountries: "PAÍSES ATENDIDOS",
+        statPartners: "SOCIOS GLOBALES",
+        statTons: "TONELADAS ANUALES",
+
         // Products Section
         productsTitle: "PRODUCTOS & VARIEDADES",
         
@@ -213,7 +232,9 @@ const translations = {
         navProducts: "PRODUTOS",
         navContact: "CONTATO",
         navFindUs: "ENCONTRE-NOS",
-        
+        navLogistics: "LOGÍSTICA",
+        navPresence: "PRESENÇA",
+
         // Hero Section
         heroTitle: "PULSE TOBACCO",
         heroSubtitle: "SEU PARCEIRO EM TABACO",
@@ -239,6 +260,13 @@ const translations = {
         logisticsTitle: "LOGÍSTICA",
         logisticsText: "Gestão eficiente da cadeia de suprimentos da origem ao destino. Cuidamos de documentação, conformidade e coordenação de remessa. Tamanhos de remessa flexíveis e cronogramas de entrega confiáveis.",
         
+        globalPresenceTitle: "PRESENÇA GLOBAL",
+        globalPresenceDesc: "A partir de nossa sede nos Emirados Árabes Unidos, conectamos produtores de tabaco de alto nível a fabricantes em seis continentes, entregando excelência garantida em todo o mundo.",
+        statYears: "ANOS DE EXPERIÊNCIA",
+        statCountries: "PAÍSES ATENDIDOS",
+        statPartners: "PARCEIROS GLOBAIS",
+        statTons: "TONELADAS ANUAIS",
+
         // Products Section
         productsTitle: "PRODUTOS & VARIEDADES",
         
