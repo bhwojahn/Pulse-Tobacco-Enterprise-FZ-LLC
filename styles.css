@@ -6,19 +6,32 @@
 /* ============================================
    FONT IMPORTS
    ============================================ */
+/* ================================
+   FONT IMPORTS
+================================ */
+
 @font-face {
-    font-family: 'Arkhip';
-    src: url('fonts/arkhip_font.ttf') format('truetype');
-    font-weight: bold;
-    font-display: swap;
+  font-family: "Arkhip";
+  src:
+    url("/font-arkhip/Arkhip.woff2") format("woff2"),
+    url("/font-arkhip/Arkhip.woff") format("woff"),
+    url("/fonts/Arkhip_font.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Salaryma';
-    src: url('fonts/SALARYMA.ttf') format('truetype');
-    font-weight: normal;
-    font-display: swap;
+  font-family: "Salaryma";
+  src:
+    url("/fonts/SALARYMA.woff2") format("woff2"),
+    url("/fonts/SALARYMA.woff") format("woff"),
+    url("/fonts/SALARYMA.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
+
 
 /* ============================================
    CSS VARIABLES
