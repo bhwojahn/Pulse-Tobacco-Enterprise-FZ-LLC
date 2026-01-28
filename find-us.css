@@ -147,7 +147,18 @@
     font-family: 'Arkhip', sans-serif;
     font-size: clamp(2rem, 4vw, 2.5rem);
     letter-spacing: 0.1em;
-    color: #C2BA79;
+    background: linear-gradient(
+        110deg,
+        #be9f48 0%,
+        #C2BA79 40%,
+        #d1b146 60%,
+        #c7a143 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 6s linear infinite;
     margin: 0;
 }
 

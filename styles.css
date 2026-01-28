@@ -190,10 +190,29 @@ p, a, li, input, textarea, button {
     position: relative;
     padding: 5px 0;
     opacity: 0.9;
+    transition: 2s;
 }
 
 .navlinks:hover {
-    color: var(--gold-light);
+    background: linear-gradient(
+        110deg,
+        #be9f48 0%,
+        #FFD86E 10%,
+        #bd9c40 20%,
+        #FFF4C3 30%,
+        #C2BA79 40%,
+        #FFE27A 50%,
+        #d1b146 60%,
+        #FFD86E 70%,
+        #c4a63d 80%,
+        #FFF5D1 90%,
+        #c7a143 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 20s linear infinite;;
     opacity: 1;
 }
 
@@ -1085,8 +1104,26 @@ footer {
 }
 
 .product-tab:hover .product-vertical-title {
-  opacity: 1;
-  color: var(--gold);
+  background: linear-gradient(
+        110deg,
+        #be9f48 0%,
+        #FFD86E 10%,
+        #bd9c40 20%,
+        #FFF4C3 30%,
+        #C2BA79 40%,
+        #FFE27A 50%,
+        #d1b146 60%,
+        #FFD86E 70%,
+        #c4a63d 80%,
+        #FFF5D1 90%,
+        #c7a143 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 0.5px rgba(139, 117, 43, 0.2);
+    animation: liquidGoldFlow 8s ease-in-out infinite;
 }
 
 .product-tab.active .product-vertical-title {
@@ -1539,5 +1576,520 @@ img {
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* ============================================
+   GLOBAL PRESENCE SECTION - NEW ADDITION
+   ============================================ */
+
+.global-presence {
+    position: relative;
+    padding: var(--section-padding) 40px;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    background: var(--navy);
+    overflow: visible;
+}
+
+.global-presence-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+.global-presence-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: rgba(194, 186, 121, 0.1);
+    border: 1px solid rgba(194, 186, 121, 0.3);
+    border-radius: 50%;
+    color: var(--gold);
+}
+
+.global-presence-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gold);
+}
+
+.global-presence-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.global-presence-title {
+    font-family: 'Arkhip', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.1em;
+    color: var(--white);
+    margin-bottom: 30px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.global-presence-gold-divider {
+    height: 3px;
+    width: 100%;
+    max-width: 200px;
+    background: radial-gradient(ellipse at center, var(--gold-light) 0%, var(--gold-dark) 100%);
+    margin: 30px auto;
+    border-radius: 2px;
+}
+
+.global-presence-description {
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    line-height: 1.8;
+    color: rgba(221, 224, 173, 0.85);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Stats Container */
+.global-stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Stat Card */
+.stat-card {
+    position: relative;
+    background: rgba(5, 2, 29, 0.6);
+    border: 1px solid rgba(194, 186, 121, 0.2);
+    border-radius: 8px;
+    padding: 50px 30px;
+    text-align: center;
+    transition: all 0.4s var(--ease-out-expo);
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    background: rgba(5, 2, 29, 0.8);
+    box-shadow: 0 10px 40px rgba(194, 186, 121, 0.15);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+/* Stat Icon */
+.stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 30px;
+    background: rgba(194, 186, 121, 0.08);
+    border: 1px solid rgba(194, 186, 121, 0.25);
+    border-radius: 50%;
+    color: var(--gold);
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.stat-card:hover .stat-icon {
+    background: rgba(194, 186, 121, 0.15);
+    border-color: var(--gold);
+    transform: scale(1.1);
+}
+
+.stat-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--gold);
+}
+
+/* Stat Number */
+.stat-number {
+    font-family: 'Arkhip', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.stat-value {
+    background: linear-gradient(
+        110deg,
+        #be9f48 0%,
+        #FFD86E 10%,
+        #bd9c40 20%,
+        #FFF4C3 30%,
+        #C2BA79 40%,
+        #FFE27A 50%,
+        #d1b146 60%,
+        #FFD86E 70%,
+        #c4a63d 80%,
+        #FFF5D1 90%,
+        #c7a143 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+.stat-plus,
+.stat-unit {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* Stat Label */
+.stat-label {
+    font-size: clamp(0.75rem, 1vw, 0.9rem);
+    letter-spacing: 0.15em;
+    color: rgba(221, 224, 173, 0.7);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Location Badge */
+.global-presence-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(194, 186, 121, 0.08);
+    border: 1px solid rgba(194, 186, 121, 0.25);
+    border-radius: 50px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    color: rgba(221, 224, 173, 0.8);
+    letter-spacing: 0.05em;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+}
+
+.global-presence-location svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - GLOBAL PRESENCE
+   ============================================ */
+
+@media screen and (max-width: 1024px) {
+    .global-stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .global-presence {
+        padding: var(--section-padding-mobile) 20px;
+    }
+
+    .global-presence-header {
+        margin-bottom: 50px;
+    }
+
+    .global-stats-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-card {
+        padding: 40px 25px;
+    }
+
+    .stat-number {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .global-presence-location {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+
+    .stat-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ============================================
+   GRADIENT GOLD TEXT - ALL MAIN TITLES
+   Add this to the end of your styles.css
+   ============================================ */
+
+/* Base Gold Gradient Mixin for Titles */
+.gradient-gold-text,
+.about-headline,
+.sourcing-title,
+.sampling-title,
+.logistics-title,
+.contact-title-main,
+.products-title,
+.global-presence-title,
+.location-title,
+.links-title,
+.contact-title {
+    background: linear-gradient(
+        110deg,
+        #be9f48 0%,
+        #FFD86E 10%,
+        #bd9c40 20%,
+        #FFF4C3 30%,
+        #C2BA79 40%,
+        #FFE27A 50%,
+        #d1b146 60%,
+        #FFD86E 70%,
+        #c4a63d 80%,
+        #FFF5D1 90%,
+        #c7a143 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 0.5px rgba(139, 117, 43, 0.2);
+    animation: liquidGoldFlow 8s ease-in-out infinite;
+}
+
+/* About Section Headline */
+.about-headline {
+    color: transparent !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Sourcing, Sampling, Logistics Titles */
+.sourcing-title,
+.sampling-title,
+.logistics-title {
+    color: transparent !important;
+    -webkit-text-stroke: 0.4px rgba(139, 117, 43, 0.25);
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+/* Contact Section Main Title */
+.contact-title-main {
+    color: transparent !important;
+    -webkit-text-stroke: 0.5px rgba(139, 117, 43, 0.2);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* Products Section Title */
+.products-title {
+    color: transparent !important;
+    -webkit-text-stroke: 0.6px rgba(139, 117, 43, 0.25);
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* Global Presence Title */
+.global-presence-title {
+    color: transparent !important;
+    -webkit-text-stroke: 0.5px rgba(139, 117, 43, 0.2);
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* Footer Section Titles */
+.location-title,
+.links-title,
+.contact-title {
+    color: transparent !important;
+    -webkit-text-stroke: 0.3px rgba(139, 117, 43, 0.3);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    font-size: 1.3rem;
+}
+
+/* Product Horizontal Titles (when tab is active) */
+.product-horizontal-title {
+    background: linear-gradient(
+        110deg,
+        #be9f48 0%,
+        #FFD86E 10%,
+        #bd9c40 20%,
+        #FFF4C3 30%,
+        #C2BA79 40%,
+        #FFE27A 50%,
+        #d1b146 60%,
+        #FFD86E 70%,
+        #c4a63d 80%,
+        #FFF5D1 90%,
+        #c7a143 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 0.4px rgba(139, 117, 43, 0.2);
+    color: transparent !important;
+    animation: liquidGoldFlow 8s ease-in-out infinite;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* Hero Title - Already has gradient, but let's ensure consistency */
+.hero-title {
+    background: linear-gradient(
+        110deg,
+        #B8942F 0%,
+        #FFD86E 10%,
+        #D4A72C 20%,
+        #FFF4C3 30%,
+        #C2BA79 40%,
+        #FFE27A 50%,
+        #D4AF37 60%,
+        #FFD86E 70%,
+        #C9A62B 80%,
+        #FFF5D1 90%,
+        #D19E1D 100%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 0.8px rgba(139, 117, 43, 0.3);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+    animation: liquidGoldFlow 8s ease-in-out infinite;
+}
+
+/* Liquid Gold Flow Animation - Already exists but repeating for consistency */
+@keyframes liquidGoldFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 75%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 25%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Optional: Add subtle gold glow on hover for interactive titles
+.about-headline:hover,
+.sourcing-title:hover,
+.sampling-title:hover,
+.logistics-title:hover,
+.contact-title-main:hover,
+.products-title:hover,
+.global-presence-title:hover,
+.product-horizontal-title:hover {
+    filter: drop-shadow(0 4px 8px rgba(194, 186, 121, 0.4)) 
+            drop-shadow(0 0 20px rgba(194, 186, 121, 0.3));
+    transition: filter 0.3s ease;
+} */
+
+/* Mobile Adjustments - Reduce stroke width for better readability */
+@media screen and (max-width: 768px) {
+    .about-headline,
+    .sourcing-title,
+    .sampling-title,
+    .logistics-title,
+    .contact-title-main,
+    .products-title,
+    .global-presence-title,
+    .product-horizontal-title {
+        -webkit-text-stroke: 0.3px rgba(139, 117, 43, 0.15);
+    }
+    
+    .location-title,
+    .links-title,
+    .contact-title {
+        -webkit-text-stroke: 0.2px rgba(139, 117, 43, 0.2);
+    }
+}
+
+/* Tablet Adjustments */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .about-headline,
+    .sourcing-title,
+    .sampling-title,
+    .logistics-title,
+    .contact-title-main,
+    .products-title,
+    .global-presence-title,
+    .product-horizontal-title {
+        -webkit-text-stroke: 0.4px rgba(139, 117, 43, 0.18);
+    }
+}
+
+/* High-res displays - Enhance stroke for better definition */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .about-headline,
+    .sourcing-title,
+    .sampling-title,
+    .logistics-title,
+    .contact-title-main,
+    .products-title,
+    .global-presence-title,
+    .product-horizontal-title {
+        -webkit-text-stroke: 0.6px rgba(139, 117, 43, 0.25);
+    }
+}
+
+/* Ensure titles remain readable with fallback */
+@supports not (background-clip: text) {
+    .about-headline,
+    .sourcing-title,
+    .sampling-title,
+    .logistics-title,
+    .contact-title-main,
+    .products-title,
+    .global-presence-title,
+    .product-horizontal-title,
+    .location-title,
+    .links-title,
+    .contact-title {
+        color: var(--gold) !important;
+        background: none;
     }
 }
