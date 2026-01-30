@@ -99,13 +99,19 @@
 
 #inter,
 #wtas,
-#wtme {
+#wtme,
+#tigt {
     min-height: 75vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
+}
+
+#tigt {
+    background-image: url('./imgs/bgWebP/santa-cruz-country-club.webp');
+    border-radius: 12px;
 }
 
 #inter {

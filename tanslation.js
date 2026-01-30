@@ -113,6 +113,8 @@ const translations = {
         wtMiddleEastLocation: "Dubai, United Arab Emirates",
         wtMiddleEastDesc: "WT Middle East is a major tobacco trade exhibition serving the Middle East region. It connects global companies to explore business opportunities and industry trends.",
         eventLearnMore: "Learn More...",
+        tigtLocation: "Santa Cruz do Sul, Brazil",
+        tigtDesc: "TIGT is an anual golf tournament happening in the first trimester of the year at Santa Cruz Country Club. TIGT brings together all of the biggest entities in the tobacco industry, showcasing inovations and strengthening connections.",
     },
     
     es: {
@@ -224,6 +226,8 @@ const translations = {
         wtMiddleEastLocation: "Dubái, Emiratos Árabes Unidos",
         wtMiddleEastDesc: "WT Middle East es una importante exhibición comercial de tabaco que sirve a la región de Medio Oriente. Conecta a empresas globales para explorar oportunidades comerciales y tendencias de la industria.",
         eventLearnMore: "Más información...",
+        tigtLocation: "Santa Cruz do Sul, Brasil",
+        tigtDesc: "TIGT es un torneo anual de golf que se celebra en el primer trimestre del año en el Santa Cruz Country Club. TIGT reúne a las principales entidades de la industria del tabaco, mostrando innovaciones y fortaleciendo conexiones.",
     },
     
     pt: {
@@ -335,6 +339,8 @@ const translations = {
         wtMiddleEastLocation: "Dubai, Emirados Árabes Unidos",
         wtMiddleEastDesc: "WT Middle East é uma importante exposição comercial de tabaco que atende a região do Oriente Médio. Conecta empresas globais para explorar oportunidades de negócios e tendências do setor.",
         eventLearnMore: "Saiba mais...",
+        tigtLocation: "Santa Cruz do Sul, Brasil",
+        tigtDesc: "O TIGT é um evento anual que acontece no Santa Cruz Country Club. O evento conta com participações de grandes entidades da industria do tabaco, o TIGT é o lugar para mostrar inovações e fortalecer conexões",
     }
 };
 
