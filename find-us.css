@@ -76,121 +76,246 @@
     align-self: flex-start; /* Keep it left-aligned on desktop */
 }
 
-/* Events Section */
+/* Nudge navbar slightly right to visually center with fewer items */
+.hero-find-us .navbar {
+    padding-left: 135px;
+}
+
+.hero-find-us .navbar.scrolled {
+    padding-left: 135px;
+}
+
+/* ============================================
+   EVENTS SECTION — SCROLL-DRIVEN STICKY REVEAL
+   ============================================ */
+
+/* Section wrapper */
 .events-section {
-    padding: 80px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* Event Card */
-.event-card {
-    background: rgba(14, 14, 14, 0.658);
-    border: 1px solid rgba(194, 186, 121, 0.2);
-    border-radius: 12px;
-    padding: 50px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    min-height: 75vh;
+/* ============================================
+   DESKTOP — Scroll Container & Sticky
+   ============================================ */
+.event-scroll-container {
+    position: relative;
+    height: 600vh;
+    width: 100%;
 }
 
-#inter,
-#wtas,
-#wtme,
-#tigt {
-    min-height: 75vh;
+.event-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Full-bleed city background image */
+.event-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
+    z-index: 1;
 }
 
-#tigt {
-    background-image: url('./imgs/bgWebP/santa-cruz-country-club.webp');
-    border-radius: 12px;
+/* Dark + blur overlay — background rgba & blur driven by JS */
+.event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 2;
+    pointer-events: none;
 }
 
-#inter {
-    background-image: url('./imgs/bgWebP/dortmund.webp');
-    border-radius: 12px;
-}
-
-#wtas {
-    background-image: url('./imgs/bgWebP/surabaya.webp');
-    border-radius: 12px;
-}
-
-#wtme {
-    background-image: url('./imgs/bgWebP/dubai-smaller.webp');
-    border-radius: 12px;
-}
-
-.event-card:hover {
-    border-color: rgba(194, 186, 121, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Event Content Layout */
-.event-content {
-    display: grid;
-    grid-template-columns: 1fr 200px;
-    gap: 50px;
-    align-items: center;
-}
-
-/* Event Text */
-.event-text {
+/* Centered text: event name + city (fade-in phase) */
+.event-reveal-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    pointer-events: none;
 }
 
+/* Shared event name style — liquidGoldFlow gradient shimmer */
 .event-name {
     font-family: 'Arkhip', sans-serif;
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
     letter-spacing: 0.1em;
+    margin: 0;
     background: linear-gradient(
         110deg,
-        #be9f48 0%,
+        #B8942F 0%,
+        #FFD86E 10%,
+        #D4A72C 20%,
+        #FFF4C3 30%,
         #C2BA79 40%,
-        #d1b146 60%,
-        #c7a143 100%
+        #FFE27A 50%,
+        #D4AF37 60%,
+        #FFD86E 70%,
+        #C9A62B 80%,
+        #FFF5D1 90%,
+        #D19E1D 100%
     );
-    background-size: 200% auto;
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shimmer 6s linear infinite;
-    margin: 0;
+    animation: liquidGoldFlow 8s ease-in-out infinite;
 }
 
-.event-location {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
-    color: #dde0ad;
-    font-weight: 500;
-}
-
-.event-dates {
-    font-size: clamp(1rem, 2vw, 1.1rem);
+.event-city {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     color: #C2BA79;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+/* ============================================
+   NOTCH — small bar rising from bottom edge
+   ============================================ */
+.event-notch {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 60px;
+    height: 6px;
+    border-radius: 3px 3px 0 0;
+    background: rgba(194, 186, 121, 0.5);
+    z-index: 5;
+    opacity: 0;
+}
+
+/* ============================================
+   INFO PANEL — slides up from bottom
+   ============================================ */
+.event-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 4;
+    transform: translateY(100%);
+    will-change: transform;
+    overflow: hidden;
+}
+
+/* Navy background with subtle dot pattern overlay */
+.event-panel-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #05021d;
+    background-image: radial-gradient(
+        circle,
+        rgba(194, 186, 121, 0.07) 1.5px,
+        transparent 1.5px
+    );
+    background-size: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 100px;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+/* Panel header: name block left, dates right */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.panel-name-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.panel-event-name {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Gold underline that grows from left — triggered by .panel-locked */
+.panel-event-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, #B8942F, #FFD86E, #C2BA79, #D4AF37);
+    border-radius: 2px;
+    transition: none;
+}
+
+.panel-event-name.panel-locked::after {
+    animation: expandWidthLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.panel-location {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #dde0ad;
     font-weight: 400;
 }
 
-.event-description {
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    line-height: 1.8;
-    color: rgba(221, 224, 173, 0.9);
+.panel-dates {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #C2BA79;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: right;
+    padding-top: 8px;
+}
+
+/* Description paragraph */
+.panel-description {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.9;
+    color: rgba(221, 224, 173, 0.85);
+    font-weight: 300;
+    max-width: 800px;
+}
+
+/* Panel footer: button left, logo right */
+.panel-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
     margin-top: 10px;
 }
 
-/* Event Button */
+/* Event Button — matches existing .event-button styles */
 .event-button {
     display: inline-block;
-    margin-top: 20px;
     padding: 14px 40px;
     background: rgba(2, 0, 17, 0.8);
     border: 2px solid #C2BA79;
@@ -203,6 +328,7 @@
     border-radius: 4px;
     transition: all 0.3s ease;
     width: fit-content;
+    white-space: nowrap;
 }
 
 .event-button:hover {
@@ -212,46 +338,32 @@
     box-shadow: 0 5px 20px rgba(194, 186, 121, 0.4);
 }
 
-/* Event Logo */
-.event-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.event-logo img {
-    max-width: 180px;
+/* Event logo in panel */
+.panel-logo {
+    max-width: 120px;
     height: auto;
     object-fit: contain;
     filter: brightness(0.9);
     transition: all 0.3s ease;
 }
 
-.event-card:hover .event-logo img {
+.panel-logo:hover {
     filter: brightness(1.1);
     transform: scale(1.05);
 }
 
+
 /* ============================================
-   RESPONSIVE - TABLET (768px - 1024px)
+   RESPONSIVE — TABLET (768px – 1024px)
    ============================================ */
 @media screen and (max-width: 1024px) {
-    .events-section {
-        padding: 60px 30px;
-        gap: 50px;
+    .event-panel-inner {
+        padding: 60px 50px;
+        gap: 25px;
     }
 
-    .event-card {
-        padding: 40px;
-    }
-
-    .event-content {
-        grid-template-columns: 1fr 150px;
-        gap: 40px;
-    }
-
-    .event-logo img {
-        max-width: 140px;
+    .panel-logo {
+        max-width: 100px;
     }
 
     /* HERO CENTERING FOR TABLET */
@@ -268,14 +380,17 @@
 
     .hero-find-us .hero-gold-divider {
         margin: 20px auto;
-        align-self: center; /* Override to center on tablet */
+        align-self: center;
     }
 }
 
+
 /* ============================================
-   RESPONSIVE - MOBILE (max 768px)
+   RESPONSIVE — MOBILE (max-width: 768px)
+   VERTICAL TIMELINE CARD LAYOUT
    ============================================ */
 @media screen and (max-width: 768px) {
+
     /* HERO CENTERING FOR MOBILE */
     .hero-find-us {
         background-attachment: scroll;
@@ -303,37 +418,97 @@
 
     .hero-find-us .hero-gold-divider {
         margin: 20px auto;
-        align-self: center; /* Override to center on mobile */
+        align-self: center;
     }
 
+    /* ---- Disable sticky scroll on mobile ---- */
     .events-section {
         padding: 40px 20px;
-        gap: 40px;
-    }
-
-    .event-card {
-        padding: 30px 25px;
-    }
-
-    .event-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    /* Logo moves to top */
-    .event-content {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
+        gap: 0;
     }
 
-    .event-logo {
+    .event-scroll-container {
+        height: auto;
+        position: relative;
+        border-left: 3px solid #C2BA79;
+    }
+
+    .event-sticky {
+        position: relative;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* City image becomes card header */
+    .event-bg {
+        position: relative;
         width: 100%;
-        justify-content: flex-start;
-        margin-bottom: 20px;
+        height: 220px;
+        background-size: cover;
+        background-position: center;
     }
 
-    .event-logo img {
-        max-width: 120px;
+    /* Hide the overlay, reveal text, and notch on mobile */
+    .event-overlay,
+    .event-reveal-text,
+    .event-notch {
+        display: none;
+    }
+
+    /* Panel becomes card body */
+    .event-panel {
+        position: relative;
+        height: auto;
+        transform: none !important;
+        will-change: auto;
+    }
+
+    .event-panel-inner {
+        height: auto;
+        padding: 30px 25px;
+        gap: 15px;
+        background-color: #05021d;
+        background-image: radial-gradient(
+            circle,
+            rgba(194, 186, 121, 0.07) 1.5px,
+            transparent 1.5px
+        );
+        background-size: 20px 20px;
+    }
+
+    /* Stack panel header vertically */
+    .panel-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .panel-dates {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .panel-event-name {
+        font-size: clamp(1.6rem, 5vw, 2rem);
+    }
+
+    /* Description */
+    .panel-description {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* Footer: stack vertically, logo right-aligned */
+    .panel-footer {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .panel-logo {
+        max-width: 80px;
+        align-self: flex-end;
     }
 
     .event-button {
@@ -342,19 +517,24 @@
     }
 }
 
+
 /* ============================================
-   RESPONSIVE - SMALL MOBILE (max 480px)
+   RESPONSIVE — SMALL MOBILE (max 480px)
    ============================================ */
 @media screen and (max-width: 480px) {
-    .event-card {
+    .event-panel-inner {
         padding: 25px 20px;
     }
 
-    .event-name {
-        font-size: 1.8rem;
+    .panel-event-name {
+        font-size: 1.5rem;
     }
 
-    .event-logo img {
-        max-width: 100px;
+    .panel-logo {
+        max-width: 70px;
+    }
+
+    .event-bg {
+        height: 180px;
     }
 }

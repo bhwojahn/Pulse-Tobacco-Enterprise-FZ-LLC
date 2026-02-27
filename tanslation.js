@@ -11,6 +11,10 @@ const translations = {
         navFindUs: "FIND US",
         navLogistics: "LOGISTICS",
         navPresence: "PRESENCE",
+        navTigt: "TIGT",
+        navIntertabac: "InterTabac",
+        navWtas: "WT Asia",
+        navWtme: "WT Middle East",
         
         // Hero Section
         heroTitle: "PULSE TOBACCO",
@@ -125,6 +129,10 @@ const translations = {
         navFindUs: "ENCUÉNTRANOS",
         navLogistics: "LOGÍSTICA",
         navPresence: "PRESENCIA",
+        navTigt: "TIGT",
+        navIntertabac: "InterTabac",
+        navWtas: "WT Asia",
+        navWtme: "WT Middle East",
         
         // Hero Section
         heroTitle: "PULSE TOBACCO",
@@ -238,6 +246,10 @@ const translations = {
         navFindUs: "ENCONTRE-NOS",
         navLogistics: "LOGÍSTICA",
         navPresence: "PRESENÇA",
+        navTigt: "TIGT",
+        navIntertabac: "InterTabac",
+        navWtas: "WT Asia",
+        navWtme: "WT Middle East",
 
         // Hero Section
         heroTitle: "PULSE TOBACCO",
